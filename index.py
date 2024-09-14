@@ -99,6 +99,21 @@ def gameLoop():
                 elif event.key == pygame.K_DOWN:
                     y1_change = snake_block
                     x1_change = 0
+        
+        # Kiểm tra va chạm với đường biên
+        if x1 >= dis_width or x1 < 0 or y1 >= dis_height or y1 < 0:
+            game_over = True
+
+        x1 += x1_change
+        y1 += y1_change
+        dis.fill(blue)
+        pygame.draw.rect(dis, green, [foodx, foody, snake_block, snake_block])
+        snake_head = []
+        snake_head.append(x1)
+        snake_head.append(y1)
+        snake_list.append(snake_head)
+        if len(snake_list) > length_of_snake:
+            del snake_list[0]
 
         pygame.display.update()
 
