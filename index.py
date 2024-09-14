@@ -115,6 +115,11 @@ def gameLoop():
         if len(snake_list) > length_of_snake:
             del snake_list[0]
 
+        # Kiểm tra va chạm với thân rắn
+        for x in snake_list[:-1]:
+            if x == snake_head:
+                game_over = True
+
         pygame.display.update()
 
         # Săn mồi: Kiểm tra va chạm của đầu rắn với vị trí của mồi
