@@ -120,6 +120,11 @@ def gameLoop():
             if x == snake_head:
                 game_over = True
 
+        # Cập nhật độ dài con rắn -> Vẽ rắn
+        our_snake(snake_block, snake_list)
+        # Cập nhật điểm của người chơi
+        your_score(length_of_snake - 1)
+
         pygame.display.update()
 
         # Săn mồi: Kiểm tra va chạm của đầu rắn với vị trí của mồi
