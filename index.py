@@ -27,3 +27,42 @@ snake_speed = 15
 
 # Kích thước của block (phần tử của con rắn)
 snake_block = 10
+
+# Định dạng font chữ
+font_style = pygame.font.SysFont(None, 50)
+score_font = pygame.font.SysFont(None, 35)
+
+# Hiển thị điểm số
+def your_score(score):
+    # Code ở đây
+
+# Vẽ rắn
+def our_snake(snake_block, snake_list):
+    # Code ở đây
+
+# Thông báo game
+def message(msg, color):
+    # Code ở đây
+
+# Play game
+def gameLoop():
+    game_over = False
+    game_close = False
+
+    x1 = dis_width / 2
+    y1 = dis_height / 2
+
+    x1_change = 0
+    y1_change = 0
+
+    snake_list = []
+    length_of_snake = 1
+
+    foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
+    foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
+
+
+    pygame.quit()
+    quit()
+
+gameLoop()
