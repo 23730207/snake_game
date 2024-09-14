@@ -40,7 +40,8 @@ def your_score(score):
 # Vẽ rắn
 def our_snake(snake_block, snake_list):
     # Code ở đây 
-    
+    for x in snake_list:
+        pygame.draw.rect(dis, black, [x[0], x[1], snake_block, snake_block])
 
 # Thông báo game
 def message(msg, color):
@@ -61,9 +62,9 @@ def gameLoop():
     snake_list = []
     length_of_snake = 1
 
+    # Random vị trí x,y của mồi
     foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
     foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
-
 
     pygame.quit()
     quit()
