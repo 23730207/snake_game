@@ -19,7 +19,7 @@ dis_height = 600
 dis = pygame.display.set_mode((dis_width, dis_height))
 
 # Tên của cửa sổ game
-pygame.display.set_caption('Snake Game')
+pygame.display.set_caption('Snake Game - SS004.10 - Team 11')
 
 # Tốc độ khung hình
 clock = pygame.time.Clock()
@@ -29,12 +29,12 @@ snake_speed = 15
 snake_block = 10
 
 # Định dạng font chữ
-font_style = pygame.font.SysFont(None, 50)
-score_font = pygame.font.SysFont(None, 35)
+font_style = pygame.font.Font('fonts/Roboto-Black.ttf', 25)
+score_font = pygame.font.Font('fonts/Roboto-Black.ttf', 30)
 
 # Hiển thị điểm số
 def your_score(score):
-    value = score_font.render("Your Score: " + str(score), True, black)
+    value = score_font.render("Điểm: " + str(score), True, yellow)
     dis.blit(value, [0, 0])
 
 # Vẽ rắn
@@ -70,7 +70,7 @@ def gameLoop():
 
         while game_over == True:
             dis.fill(blue)
-            message("You Lost! Press C-Play Again or Q-Quit", red)
+            message("Bạn thua! Nhấn C chơi lại hoặc Q để thoát", red)
             your_score(length_of_snake - 1)
             pygame.display.update()
 
