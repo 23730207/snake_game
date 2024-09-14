@@ -67,8 +67,9 @@ def gameLoop():
     foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
 
     while not game_over:
+ 
 
-        # Kiểm tra di chuyển rắn
+        # Kiểm tra di chuyển rắn 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 game_over = True
@@ -87,7 +88,7 @@ def gameLoop():
                     x1_change = 0
 
         pygame.display.update()
-        
+
         # Săn mồi: Kiểm tra va chạm của đầu rắn với vị trí của mồi
         if x1 == foodx and y1 == foody:
             foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
