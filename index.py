@@ -86,6 +86,15 @@ def gameLoop():
                     y1_change = snake_block
                     x1_change = 0
 
+        pygame.display.update()
+        
+        # Săn mồi: Kiểm tra va chạm của đầu rắn với vị trí của mồi
+        if x1 == foodx and y1 == foody:
+            foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
+            foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
+            length_of_snake += 1
+
+        clock.tick(snake_speed)
     pygame.quit()
     quit()
 
