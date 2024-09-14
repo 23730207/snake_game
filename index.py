@@ -66,12 +66,26 @@ def gameLoop():
     foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
     foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
 
-    while not game_over:
+    while not game_close:
+
+        while game_over == True:
+            dis.fill(blue)
+            message("You Lost! Press C-Play Again or Q-Quit", red)
+            your_score(length_of_snake - 1)
+            pygame.display.update()
+
+            for event in pygame.event.get():
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_q:
+                        game_over = False
+                        game_close = True
+                    if event.key == pygame.K_c:
+                        gameLoop()
 
         # Kiểm tra di chuyển rắn
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                game_over = True
+                game_close = True
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
                     x1_change = -snake_block
