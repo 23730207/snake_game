@@ -34,16 +34,19 @@ score_font = pygame.font.SysFont(None, 35)
 
 # Hiển thị điểm số
 def your_score(score):
-    # Code ở đây
+    value = score_font.render("Your Score: " + str(score), True, black)
+    dis.blit(value, [0, 0])
 
 # Vẽ rắn
 def our_snake(snake_block, snake_list):
+    # Code ở đây 
     for x in snake_list:
         pygame.draw.rect(dis, black, [x[0], x[1], snake_block, snake_block])
 
 # Thông báo game
 def message(msg, color):
-    # Code ở đây
+    mesg = font_style.render(msg, True, color)
+    dis.blit(mesg, [dis_width / 6, dis_height / 3])
 
 # Play game
 def gameLoop():
