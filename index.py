@@ -1,3 +1,7 @@
+# ĐỒ ÁN CUỐI KHOÁ NHÓM 11
+# NHÓM SS004.10.11
+
+
 import pygame
 import time
 import random
